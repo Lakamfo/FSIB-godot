@@ -16,7 +16,7 @@ func _ready() -> void:
 	fsib_main.progress_updated.connect(_progress_updated)
 	fsib_main.done.connect(warmup_done)
 	
-	fsib_main.warmup(FSIB_Tools.get_all_resources(), spawn_root, batch_size)
+	fsib_main.warmup(FSIB_Tools.get_all_resources(), spawn_root, batch_size, force_warmup)
 
 func _status_updated(status : String) -> void:
 	if label: label.text = status
