@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://d0dnh4n2gpsvv"]
+
+[ext_resource type="Script" uid="uid://dgbwmkatstrlp" path="res://addons/fsib/scripts/fsib_scene.gd" id="1_e1e1d"]
+[ext_resource type="Script" uid="uid://q6m3pahyhlwl" path="res://addons/fsib/scripts/fsib_main.gd" id="2_uvuik"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ig7tw"]
+font_color = Color(0.33511627, 0.33511627, 0.33511627, 1)
+
+[node name="FSIBScene" type="Control" unique_id=546937270 node_paths=PackedStringArray("fsib_main", "label", "label_bar", "progress_bar", "spawn_root")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e1e1d")
+fsib_main = NodePath("fsib_main")
+label = NodePath("CanvasLayer/VBoxContainer/LabelInfo")
+label_bar = NodePath("CanvasLayer/VBoxContainer/ProgressBar/Label")
+progress_bar = NodePath("CanvasLayer/VBoxContainer/ProgressBar")
+spawn_root = NodePath("node_3d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1333070092]
+layer = 2147483647
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=394195099]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.99607843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1403837784]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 287.0
+offset_top = -69.0
+offset_right = -287.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="LabelInfo" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1565022006]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ig7tw")
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/VBoxContainer" unique_id=1934744924]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/ProgressBar" unique_id=203391108]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fsib_main" type="Node" parent="." unique_id=1476245852]
+script = ExtResource("2_uvuik")
+
+[node name="node_3d" type="Node3D" parent="." unique_id=1794582212]
+
+[node name="camera_3d" type="Camera3D" parent="node_3d" unique_id=1119473378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
