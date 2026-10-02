@@ -1,5 +1,7 @@
 # FSIB: Shader Warmup for Godot 4
 
+https://github.com/user-attachments/assets/dca3094b-c01c-408c-86a5-c0fbe96999df
+
 Spawns every scene, mesh and material of your project in a hidden "warmup" scene, so that shaders and render pipelines are compiled **before** gameplay starts and the player doesn't get stutters the first time an effect appears.
 
 - Loads resources **lazily and in the background** (`ResourceLoader.load_threaded_request`), the next batch is prefetched while the current one renders.
